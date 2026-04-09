@@ -466,7 +466,7 @@ export default function App() {
           </div>
 
           {/* Client Logos Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8 max-w-5xl mx-auto">
             {[
               "https://lh3.googleusercontent.com/d/1729tx_J4KPAbVmZBqklJmInpC5DNWDQJ",
               "https://lh3.googleusercontent.com/d/1K8RoDjoMgt4ySTaYIL7HI05dHw_kyM64",
@@ -481,12 +481,12 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-zinc-900/40 backdrop-blur-md border border-zinc-800/50 rounded-2xl p-8 flex items-center justify-center aspect-video hover:border-orange-500/30 hover:bg-zinc-800/50 transition-all group shadow-lg"
+                className="bg-zinc-900/40 backdrop-blur-md border border-zinc-800/50 rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-8 flex items-center justify-center h-28 sm:h-32 md:h-40 hover:border-orange-500/30 hover:bg-zinc-800/50 transition-all group shadow-lg"
               >
                 <img 
                   src={logo} 
                   alt={`Client Logo ${i + 1}`} 
-                  className="max-w-full max-h-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110" 
+                  className="w-full h-full object-contain transition-all duration-500 group-hover:scale-110" 
                   referrerPolicy="no-referrer"
                 />
               </motion.div>
