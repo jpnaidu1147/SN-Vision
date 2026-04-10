@@ -466,14 +466,16 @@ export default function App() {
           </div>
 
           {/* Client Logos Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 max-w-6xl mx-auto">
             {[
-              "https://lh3.googleusercontent.com/d/1729tx_J4KPAbVmZBqklJmInpC5DNWDQJ",
-              "https://lh3.googleusercontent.com/d/1K8RoDjoMgt4ySTaYIL7HI05dHw_kyM64",
-              "https://lh3.googleusercontent.com/d/1AvdlZX0csaealvaGC63JuPft-CZ-Pfd9",
-              "https://lh3.googleusercontent.com/d/1iQGpsRpx7-6QOOPsILTScFhPeRGFy9f1",
-              "https://lh3.googleusercontent.com/d/122bIaFoxOx31ysaYiRYiM0lnlgxOsO0i",
-              "https://lh3.googleusercontent.com/d/1Z6UyJs88DnI8_XJsMThdZqQpCxYFVEOy"
+              "https://lh3.googleusercontent.com/d/17104TW7sYQgKhpp6BPMD3hCh2_YkL6fK",
+              "https://lh3.googleusercontent.com/d/1Z6UyJs88DnI8_XJsMThdZqQpCxYFVEOy",
+              "https://lh3.googleusercontent.com/d/1YSQAmUphX9XEXsatPwVIrokVXpPJiUp-",
+              "https://lh3.googleusercontent.com/d/1xnP-WBOXyVDvGcK74PSetmh-wSK-WjDV",
+              "https://lh3.googleusercontent.com/d/1xzV-g4qFjX9dTWrsdW07owSZCgSrFO4k",
+              "https://lh3.googleusercontent.com/d/1yGnVhFF6Yvi6X9O47gcBrOvTD57SpMVm",
+              "https://lh3.googleusercontent.com/d/1KpdzkH3nEFcjjoUuBtg0onpK4vAdN0Zh",
+              "https://lh3.googleusercontent.com/d/1RjlY1iLqRpelucJp-YqEp4sQj1wfG24B"
             ].map((logo, i) => (
               <motion.div 
                 key={i}
