@@ -166,10 +166,10 @@ export default function App() {
           <img 
             src="https://lh3.googleusercontent.com/d/1FnHNxV--HItuveFPlb0OKdFIm0JUyc00" 
             alt="SN Vision Media Background" 
-            className="w-full h-full object-cover opacity-30 blur-[2px]"
+            className="w-full h-full object-cover opacity-50 blur-[1px]"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/90 to-zinc-950/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/70 to-zinc-950/30" />
         </div>
 
         {/* Abstract Background Elements */}
