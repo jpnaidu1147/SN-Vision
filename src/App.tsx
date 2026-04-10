@@ -100,8 +100,17 @@ export default function App() {
       return;
     }
 
-    // Form is valid, submit logic would go here
-    alert('Message sent successfully!');
+    // Form is valid, construct mailto link
+    const subject = encodeURIComponent(`New Inquiry from ${formData.firstName} ${formData.lastName} - ${formData.service}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.firstName} ${formData.lastName}\n` +
+      `Email: ${formData.email}\n` +
+      `Service Required: ${formData.service}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    
+    window.location.href = `mailto:info@snvisionmedia.com?subject=${subject}&body=${body}`;
+
     setFormData({
       firstName: '',
       lastName: '',
@@ -109,6 +118,21 @@ export default function App() {
       service: 'Advertisement',
       message: ''
     });
+  };
+
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navHeight = 80; // Approximate height of the fixed navbar
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+  
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
   };
 
   return (
@@ -125,10 +149,10 @@ export default function App() {
             />
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
-            <a href="#services" className="hover:text-orange-500 transition-colors">Services</a>
-            <a href="#about" className="hover:text-orange-500 transition-colors">About</a>
-            <a href="#contact" className="hover:text-orange-500 transition-colors">Contact</a>
-            <a href="#contact" className="bg-orange-500 text-zinc-950 px-5 py-2.5 rounded-full font-bold hover:bg-orange-400 transition-colors">
+            <a href="#services" onClick={(e) => scrollToSection(e, 'services')} className="hover:text-orange-500 transition-colors">Services</a>
+            <a href="#about" onClick={(e) => scrollToSection(e, 'about')} className="hover:text-orange-500 transition-colors">About</a>
+            <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="hover:text-orange-500 transition-colors">Contact</a>
+            <a href="#contact" onClick={(e) => scrollToSection(e, 'contact')} className="bg-orange-500 text-zinc-950 px-5 py-2.5 rounded-full font-bold hover:bg-orange-400 transition-colors">
               Get in Touch
             </a>
           </div>
@@ -142,10 +166,10 @@ export default function App() {
           <img 
             src="https://lh3.googleusercontent.com/d/1FnHNxV--HItuveFPlb0OKdFIm0JUyc00" 
             alt="SN Vision Media Background" 
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover opacity-30 blur-[2px]"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/90 to-zinc-950/60" />
         </div>
 
         {/* Abstract Background Elements */}
@@ -414,7 +438,10 @@ export default function App() {
                         <p className="text-sm text-zinc-300 mb-6 leading-relaxed">
                           {service.details}
                         </p>
-                        <button className="flex items-center gap-2 text-sm font-bold text-zinc-950 bg-orange-500 px-6 py-3 rounded-full hover:bg-orange-400 hover:scale-105 transition-all w-max shadow-[0_0_20px_rgba(249,115,22,0.4)]">
+                        <button 
+                          onClick={() => console.log(`Quote requested for: ${service.title}`)}
+                          className="flex items-center gap-2 text-sm font-bold text-zinc-950 bg-orange-500 px-6 py-3 rounded-full hover:bg-orange-400 hover:scale-105 transition-all w-max shadow-[0_0_20px_rgba(249,115,22,0.4)]"
+                        >
                           Get Quote
                           <ArrowRight className="w-4 h-4" />
                         </button>
